@@ -535,12 +535,15 @@ async function initialize() {
   state.googleSync = stored.googleSync || state.googleSync;
   state.settings = { ...state.settings, ...(stored.settings || {}), launchOnStartup: startup.enabled };
 
+ codex/create-smart-sticky-pro-app-using-electron-hewshb
   if (!state.notes.length) {
     state.notes.push(createEmptyNote(0));
   }
 
   els.leadModal.classList.add('hidden');
 
+=======
+  main
   wireGlobalEvents();
   renderBoard();
   updateGoogleUi();
