@@ -1,0 +1,55 @@
+{
+  "name": "smart-sticky-pro",
+  "version": "1.0.0",
+  "description": "Smart Sticky Pro - Multi-note Electron desktop app",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron .",
+    "lint": "echo 'No linter configured'",
+    "build:win": "electron-builder --win --x64"
+  },
+  "keywords": [
+    "electron",
+    "sticky-notes",
+    "productivity"
+  ],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^31.0.2",
+    "electron-builder": "^24.13.3"
+  },
+  "build": {
+    "appId": "com.smartstickypro.app",
+    "productName": "Smart Sticky Pro",
+    "files": [
+      "main.js",
+      "preload.js",
+      "renderer.js",
+      "index.html",
+      "styles.css",
+      "assets/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": [
+        {
+          "target": "nsis",
+          "arch": [
+            "x64"
+          ]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true
+    }
+  }
+}
